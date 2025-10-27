@@ -290,5 +290,7 @@ def ranking_items():
     
     return render_template("4-3_result_ranking_items.html",statistics_type=statistics_type,items=items)
 
-if __name__=="__main__":
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Render用にホストとポートを指定
+    from os import environ
+    app.run(host="0.0.0.0", port=int(environ.get("PORT", 5000)))
